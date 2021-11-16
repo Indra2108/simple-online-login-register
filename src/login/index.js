@@ -16,16 +16,6 @@ export default class Login extends Component {
             password: '',
             hide: true,
         }
-
-        // AsyncStorage.getItem('REGISTER', (error, result) => {
-        //     if (result) {
-        //        let resultParsed = JSON.parse(result)
-        //        this.setState({
-        //             cekData: true,
-        //             teksUsername: resultParsed.username
-        //         });
-        //     }
-        // });
     }
 
     loginDataMengtodo = () => {
