@@ -36,7 +36,9 @@ export default class Register extends Component {
             body: JSON.stringify(dataku)
         })
         .then((response) => response.json())
-        .then((mengrespon) => { console.log(mengrespon) })
+        .then((mengrespon) => { 
+            console.log(mengrespon) 
+        })
         .catch(error => { console.log(error) }) 
     }
 
