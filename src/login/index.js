@@ -8,13 +8,17 @@ import styles from "./styles";
 import open from '../assets/eye.png';
 import close from '../assets/hidden.png';
 
+// IMPORT LIBRARY
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 export default class Login extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             email: '',
             password: '',
             hide: true,
+            token: ''
         }
     }
 
@@ -32,7 +36,10 @@ export default class Login extends Component {
             body: JSON.stringify(dataku)
         })
         .then((response) => response.json())
-        .then((mengrespon) => { console.log(mengrespon) })
+        .then((mengrespon) => { 
+            console.log(mengrespon)
+            this.setState({ token: mengrespon.token })
+        })
         .catch(error => { console.log(error) }) 
     }
 
@@ -61,6 +68,10 @@ export default class Login extends Component {
                     
                 <TouchableOpacity style={styles.tombol} onPress={() => this.loginDataMengtodo()}>
                     <Text style={styles.tulisantombol}>LOGIN</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.tombol} onPress={() => alert(this.state.token)}>
+                    <Text style={styles.tulisantombol}>GET TOKEN</Text>
                 </TouchableOpacity>
             </View>
         )
