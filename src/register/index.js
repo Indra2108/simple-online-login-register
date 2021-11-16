@@ -76,6 +76,10 @@ export default class Register extends Component {
                         secureTextEntry={this.state.hide}
                         onChangeText={(password) => { this.setState({ password }) }} 
                     />
+
+                    <TouchableOpacity onPress={() => this.state.hide ? this.setState({ hide: false }) : this.setState({ hide: true })}> 
+                        <Image source={this.state.hide ? open : close} style={styles.eye} />
+                    </TouchableOpacity>
                 </View>
 
                 <View style={styles.inputbackground}>

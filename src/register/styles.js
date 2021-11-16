@@ -12,7 +12,7 @@ export default StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: 4,
+        padding: 10,
     },
     textinput: {
 
