@@ -8,10 +8,10 @@ import Register from './src/register';
 export default class App extends Component {
   render() {
     return(
-      <View>
-        <Login />
-        {/* <Register /> */}
-      </View>
+      <>
+        {/* <Login /> */}
+        <Register />
+      </>
     )
   }
 }

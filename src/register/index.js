@@ -12,8 +12,10 @@ export default class Register extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
+            nama: '',
+            email: '',
             password: '',
+            password_confirmation: '',
             teksUsername: '',
             hide: true,
             cekData: null
@@ -33,46 +35,32 @@ export default class Register extends Component {
     render() {
         return(
             <View style={styles.container}>
-                {this.state.cekData ? <Text>{`Hallo! anda sudah mempunyai akun dengan nama ${this.state.teksUsername}, silahkan Log in`}</Text> : null}
-                <View style={styles.inputbackground}>
+                <View>
                     <TextInput 
-                        placeholder='Username'
-                        style={styles.textinput}
-                        onChangeText={(username) => this.setState({ username })}
+                        placeholder='Nama lengkap anda' 
+                        style={styles.inputbackground} 
+                        onChangeText={(nama) => { this.setState({ nama })}}
                     />
-                </View>
 
-                <View style={styles.inputbackground}>
                     <TextInput 
-                        placeholder='Password'
-                        style={styles.textinput}
-                        secureTextEntry={this.state.hide}
-                        onChangeText={(password) => this.setState({ password })}
+                        placeholder='Alamat Email anda' 
+                        style={styles.inputbackground}
+                        onChangeText={(email) => { this.setState({ email })}} 
                     />
-                    <TouchableOpacity onPress={() => this.state.hide ? this.setState({ hide: false }) : this.setState({ hide: true })}> 
-                        <Image source={this.state.hide ? open : close} style={styles.eye}/>
-                    </TouchableOpacity>
-                </View>
 
-                {/* <TouchableOpacity onPress={this.readStorage} style={styles.tombol}>
-                    <Text style={styles.tulisantombol}>BACA</Text>
-                </TouchableOpacity> */}
+                    <TextInput 
+                        placeholder='Password baru' 
+                        style={styles.inputbackground}
+                        onChangeText={(password) => { this.setState({ password })}} 
+                    />
 
-                <TouchableOpacity onPress={this.saveStorage} style={styles.tombol}>
-                    <Text style={styles.tulisantombol}>REGISTER</Text>
-                </TouchableOpacity>
+                    <TextInput 
+                        placeholder='Ulangi Passwordmu' 
+                        style={styles.inputbackground}
+                        onChangeText={(password_confirmation) => { this.setState({ password_confirmation })}} 
+                    />
 
-                <TouchableOpacity onPress={this.removeStorage} style={styles.tombol}>
-                    <Text style={styles.tulisantombol}>BATAL</Text>
-                </TouchableOpacity>
-                
-                {/* <TouchableOpacity onPress={() => alert(`${this.state.cekData}`)} style={styles.tombol}>
-                    <Text style={styles.tulisantombol}>CEK</Text>
-                </TouchableOpacity> */}
 
-                <View style={styles.tekslogin}>
-                    <Text>Sudah punya akun? </Text>
-                    <Text onPress={() => this.props.navigation.navigate('Login')} style={styles.login}>LOGIN</Text>
                 </View>
             </View>
         )
