@@ -20,7 +20,7 @@ export default class Register extends Component {
         }
     }
 
-    registerDataMengtodo = () => {
+    registerData = () => {
         let dataku = {
             name: this.state.name,
             email: this.state.email,
@@ -80,7 +80,7 @@ export default class Register extends Component {
                     />
                 </View>
                 
-                <TouchableOpacity style={styles.tombol} onPress={() => this.registerDataMengtodo()}>
+                <TouchableOpacity style={styles.tombol} onPress={() => this.registerData()}>
                 {/* <TouchableOpacity style={styles.tombol} onPress={() => alert('Nama: '+this.state.name +' Email: '+ this.state.email +' Password: '+ this.state.password +' Password Lagi '+ this.state.password_confirmation)}> */}
                     <Text style={styles.tulisantombol}>REGISTER</Text>
                 </TouchableOpacity>

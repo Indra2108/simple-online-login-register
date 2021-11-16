@@ -20,9 +20,19 @@ export default class Login extends Component {
             hide: true,
             token: ''
         }
+
+        
     }
 
-    loginDataMengtodo = () => {
+    storeData = async (value) => {
+        try {
+          await AsyncStorage.setItem('@storage_Key', value)
+        } catch (e) {
+          // saving error
+        }
+    }
+
+    loginData = () => {
         let dataku = {
             email: this.state.email,
             password: this.state.password,
@@ -66,7 +76,7 @@ export default class Login extends Component {
                     </TouchableOpacity>
                 </View>
                     
-                <TouchableOpacity style={styles.tombol} onPress={() => this.loginDataMengtodo()}>
+                <TouchableOpacity style={styles.tombol} onPress={() => this.loginData()}>
                     <Text style={styles.tulisantombol}>LOGIN</Text>
                 </TouchableOpacity>
 
