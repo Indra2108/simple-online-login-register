@@ -8,7 +8,7 @@ import styles from "./styles";
 import open from '../assets/eye.png';
 import close from '../assets/hidden.png';
 
-export default class Register extends Component {
+export default class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
