@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 
 // IMPORT STYLE
-import styles from "./style";
+import styles from "./styles";
 
 // IMPORT PICTURE
 import open from '../assets/eye.png';
