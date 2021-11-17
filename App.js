@@ -19,7 +19,6 @@ export default class App extends Component {
     return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName='Mengsplash'>
-        {/* <Stack.Navigator initialRouteName='Home'> */}
           <Stack.Screen name="Mengsplash" component={Mengsplash} />
           <Stack.Screen name="Dashboard" component={Dashboard} />
           <Stack.Screen name="Home" component={Home} />
