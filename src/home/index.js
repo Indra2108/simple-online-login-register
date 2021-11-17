@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, TouchableOpacity } from 'react-native';
 
-// Import style
+// IMPORT STYLES
 import styles from "./styles";
 
 export default class Home extends Component {

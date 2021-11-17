@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-// import styles
+// IMPORT STYLES
 import styles from './styles'
 
 // IMPORT LIBRARY
@@ -21,7 +21,7 @@ export default class Dashboard extends Component {
         return (
             <View style={styles.container}>
                 <Text>Ini Dashboard</Text>
-                
+
                 <TouchableOpacity style={styles.tombol} onPress={() => this.removeDataStorage()}>
                     <Text style={styles.tulisantombol}>HAPUS TOKEN</Text>
                 </TouchableOpacity>

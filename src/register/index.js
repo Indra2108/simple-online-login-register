@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 
-// IMPORT STYLE
+// IMPORT STYLES
 import styles from "./styles";
 
 // IMPORT PICTURE
@@ -83,7 +83,6 @@ export default class Register extends Component {
                 </View>
 
                 <TouchableOpacity style={styles.tombol} onPress={() => this.registerData()}>
-                    {/* <TouchableOpacity style={styles.tombol} onPress={() => alert('Nama: '+this.state.name +' Email: '+ this.state.email +' Password: '+ this.state.password +' Password Lagi '+ this.state.password_confirmation)}> */}
                     <Text style={styles.tulisantombol}>REGISTER</Text>
                 </TouchableOpacity>
             </View>
