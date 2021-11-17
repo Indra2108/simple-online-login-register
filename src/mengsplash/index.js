@@ -9,30 +9,23 @@ import Dashboard from '../dashboard';
 import Home from '../home'
 
 export default class Mengsplash extends Component {
-    constructor() {
-        super();
-        this.state = {
-            cekToken: false
-        }
-
-        AsyncStorage.getItem('token', (error, result) => {
-            let mydata = result
-            if (mydata === null) {
-                console.log('Token Kosong!')
-                this.setState({ cekToken: false })
-            } else {
-                this.setState({ cekToken: true })
-            }
-        });
-
+    componentDidMount() {
+        AsyncStorage.getItem('token')
+            .then(mydata => {
+                if (mydata === null) {
+                    console.log('Token Kosong!')
+                    this.props.navigation.replace('Home')
+                } else {
+                    this.props.navigation.replace('Dashboard')
+                }
+            })
+            .catch(err => console.log(err))
     }
-
 
     render() {
-        if (this.state.cekToken === true) {
-            return <Dashboard />
-        } else {
-            return <Home />
-        }
+        return (
+            <Text>xxx</Text>
+        )
     }
+
 }
