@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 
 // import screen
+import Mengsplash from "./src/mengsplash";
+import Dashboard from "./src/dashboard";
 import Home from './src/home'
 import Login from './src/login';
 import Register from './src/register';
@@ -14,9 +16,12 @@ const Stack = createNativeStackNavigator();
 
 export default class App extends Component {
   render() {
-    return(
+    return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='Home'>
+        <Stack.Navigator initialRouteName='Mengsplash'>
+        {/* <Stack.Navigator initialRouteName='Home'> */}
+          <Stack.Screen name="Mengsplash" component={Mengsplash} />
+          <Stack.Screen name="Dashboard" component={Dashboard} />
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Register" component={Register} />
           <Stack.Screen name="Login" component={Login} />
